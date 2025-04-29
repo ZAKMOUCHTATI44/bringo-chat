@@ -4,7 +4,7 @@ require("dotenv").config();
 const path = require("path");
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
-const filePath = path.resolve(__dirname, "src", "data", "scenario.txt");
+const filePath = path.resolve(__dirname, "scenario.txt");
 
 const scenarioText = fs.readFileSync(filePath, "utf-8");
 
