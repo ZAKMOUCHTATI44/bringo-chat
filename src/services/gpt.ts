@@ -3,7 +3,7 @@ import { OpenAI } from "openai";
 require('dotenv').config()
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
-const scenarioText = fs.readFileSync("./src/data/scenario.txt", "utf-8");
+const scenarioText = fs.readFileSync("src/data/scenario.txt", "utf-8");
 
 export async function askBringoBot(message: string): Promise<string> {
   const chat = await openai.chat.completions.create({
