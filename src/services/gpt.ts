@@ -1,9 +1,12 @@
 import fs from "fs";
 import { OpenAI } from "openai";
-require('dotenv').config()
+require("dotenv").config();
+const path = require("path");
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
-const scenarioText = fs.readFileSync("src/data/scenario.txt", "utf-8");
+const filePath = path.resolve(__dirname, "src", "data", "scenario.txt");
+
+const scenarioText = fs.readFileSync(filePath, "utf-8");
 
 export async function askBringoBot(message: string): Promise<string> {
   const chat = await openai.chat.completions.create({
