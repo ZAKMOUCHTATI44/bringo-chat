@@ -1,9 +1,10 @@
 import express, { Request, Response } from "express";
-import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import chatRoutes from "./src/routes/chat"
-dotenv.config();
 const app = express();
+
+import dotenv from "dotenv";
+dotenv.config();
 
 app.use(bodyParser.json());
 app.use("/chat", chatRoutes);
