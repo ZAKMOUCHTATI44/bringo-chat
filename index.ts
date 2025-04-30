@@ -18,6 +18,8 @@ app.post("/chat", async (req: Request, res: Response) => {
   const message = req.body;
   const client = await twilioInstance();
 
+  console.log(message)
+
   const reply = await askBringoBot(message.Body);
 
   client.messages
